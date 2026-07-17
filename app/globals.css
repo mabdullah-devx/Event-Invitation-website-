@@ -1,0 +1,247 @@
+@import "tailwindcss";
+
+/* ── Design Tokens ────────────────────────────────────────────────── */
+:root {
+  --bg:          #0B0B0B;
+  --charcoal:    #121212;
+  --gold:        #D4AF37;
+  --gold-light:  #F0D060;
+  --gold-dark:   #A8891D;
+  --warm-beige:  #E9DFC7;
+  --cream-white: #F8F4E8;
+  --forest:      #4E6A54;
+  --bronze:      #A77B4A;
+
+  --font-playfair:   'Playfair Display', Georgia, serif;
+  --font-cormorant:  'Cormorant Garamond', Georgia, serif;
+  --font-inter:      'Inter', system-ui, sans-serif;
+  --font-poppins:    'Poppins', system-ui, sans-serif;
+}
+
+/* ── Reset & Base ─────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: auto; /* Lenis handles this */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--cream-white);
+  font-family: var(--font-inter);
+  overflow-x: hidden;
+}
+
+/* ── Custom Scrollbar ─────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--charcoal);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gold-dark);
+  border-radius: 2px;
+}
+
+/* ── Glassmorphism Utility ────────────────────────────────────────── */
+.glass {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  border-radius: 16px;
+}
+
+.glass-heavy {
+  background: rgba(18, 18, 18, 0.7);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+/* ── Gold Text Gradient ───────────────────────────────────────────── */
+.text-gold-gradient {
+  background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 50%, var(--gold-dark) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Gold Shimmer ─────────────────────────────────────────────────── */
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--gold-dark) 0%,
+    var(--gold-light) 40%,
+    var(--gold) 50%,
+    var(--gold-light) 60%,
+    var(--gold-dark) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* ── Section base ─────────────────────────────────────────────────── */
+.section-padding {
+  padding: 8rem 2rem;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 5rem 1.25rem;
+  }
+}
+
+/* ── Ornamental Divider ───────────────────────────────────────────── */
+.ornament {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--gold);
+  letter-spacing: 0.4em;
+  font-family: var(--font-cormorant);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+.ornament::before,
+.ornament::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+/* ── Reduced Motion ───────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ── Canvas overlay ───────────────────────────────────────────────── */
+.canvas-container {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
+
+/* ── Lenis smooth scroll ──────────────────────────────────────────── */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* ── Invitation paper texture ─────────────────────────────────────── */
+.paper-texture {
+  background-color: #F8F4E8;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Ccircle cx='1' cy='1' r='0.5' fill='%23c8b99040'/%3E%3C/svg%3E");
+  background-size: 4px 4px;
+}
+
+/* ── Magnetic button wrapper ──────────────────────────────────────── */
+.magnetic-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Glow ring ────────────────────────────────────────────────────── */
+@keyframes glow-ring {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(212,175,55,0); }
+  50% { box-shadow: 0 0 0 8px rgba(212,175,55,0.2); }
+}
+
+.glow-ring {
+  animation: glow-ring 2.5s ease-in-out infinite;
+}
+
+/* ── Float keyframe ───────────────────────────────────────────────── */
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+.float-anim {
+  animation: float-y 5s ease-in-out infinite;
+}
+
+/* ── Particles canvas ─────────────────────────────────────────────── */
+#particle-canvas {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* ── Wax seal glow pulse ──────────────────────────────────────────── */
+@keyframes seal-pulse {
+  0%, 100% { filter: drop-shadow(0 0 6px rgba(212,175,55,0.3)); }
+  50% { filter: drop-shadow(0 0 20px rgba(212,175,55,0.8)); }
+}
+
+.seal-glow {
+  animation: seal-pulse 2s ease-in-out infinite;
+}
+
+/* ── Countdown flip ───────────────────────────────────────────────── */
+.flip-number {
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* ── Masonry grid ─────────────────────────────────────────────────── */
+.masonry-grid {
+  columns: 3;
+  column-gap: 1rem;
+}
+
+@media (max-width: 1024px) {
+  .masonry-grid { columns: 2; }
+}
+
+@media (max-width: 640px) {
+  .masonry-grid { columns: 1; }
+}
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 1rem;
+}
+
+/* ── 3D scene overlay fade ────────────────────────────────────────── */
+.scene-overlay {
+  position: fixed;
+  inset: 0;
+  background: #0B0B0B;
+  z-index: 100;
+  pointer-events: none;
+}
