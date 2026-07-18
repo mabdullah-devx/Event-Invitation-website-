@@ -30,14 +30,14 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Family Lunch Gathering — Abida & Naveeda",
+  title: "Family Dinner Gathering — Abida & Naveeda",
   description:
-    "You are cordially invited to a beautiful Family Lunch Gathering. Join us for an afternoon of togetherness, delicious food, and warm memories shared with loved ones.",
-  keywords: ["family gathering", "lunch", "invitation", "Qasr Al Hamra"],
+    "You are cordially invited to a beautiful Family Dinner Gathering. Join us for a night of togetherness, delicious food, and warm memories shared with loved ones.",
+  keywords: ["family gathering", "dinner", "invitation", "Qasr Al Hamra"],
   openGraph: {
-    title: "Family Lunch Gathering — Abida & Naveeda",
+    title: "Family Dinner Gathering — Abida & Naveeda",
     description:
-      "Join us for an afternoon of togetherness, delicious food, warm conversations, and beautiful memories.",
+      "Join us for a night of togetherness, delicious food, warm conversations, and beautiful memories.",
     type: "website",
   },
   robots: {

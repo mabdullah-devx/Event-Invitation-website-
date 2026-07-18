@@ -135,7 +135,7 @@ export default function WelcomeSection() {
           className="font-cormorant text-xl md:text-2xl text-warm-beige/80 leading-relaxed max-w-2xl opacity-0"
           style={{ fontStyle: 'italic', letterSpacing: '0.02em' }}
         >
-          Join us for an afternoon filled with laughter, meaningful
+          Join us for a night filled with laughter, meaningful
           conversations, delicious food, and unforgettable memories that will
           warm our hearts for years to come.
         </p>

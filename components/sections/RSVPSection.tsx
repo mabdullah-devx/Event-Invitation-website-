@@ -102,12 +102,12 @@ export default function RSVPSection() {
   const downloadICS = () => {
     const ics = `BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//Family Lunch Gathering//EN
+PRODID:-//Family Dinner Gathering//EN
 BEGIN:VEVENT
 DTSTART:20260718T190000
 DTEND:20260718T230000
-SUMMARY:Family Lunch Gathering — Abida & Naveeda
-DESCRIPTION:Join us for an afternoon of togetherness\\, delicious food\\, warm conversations\\, and beautiful memories.
+SUMMARY:Family Dinner Gathering — Abida & Naveeda
+DESCRIPTION:Join us for a night of togetherness\\, delicious food\\, warm conversations\\, and beautiful memories.
 LOCATION:Qasr Al Hamra Restaurant
 END:VEVENT
 END:VCALENDAR`
@@ -115,7 +115,7 @@ END:VCALENDAR`
     const url = URL.createObjectURL(blob)
     const link = document.createElement('a')
     link.href = url
-    link.download = 'family-lunch-gathering.ics'
+    link.download = 'family-dinner-gathering.ics'
     link.click()
     URL.revokeObjectURL(url)
   }
@@ -201,7 +201,7 @@ END:VCALENDAR`
         >
           <motion.div variants={itemVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
             <RSVPButton
-              href="https://wa.me/+923292444106?text=Assalamu%20Alaikum%2C%20I%20would%20like%20to%20RSVP%20for%20the%20Family%20Lunch%20Gathering%20on%2018%20July%202026."
+              href="https://wa.me/+923292444106?text=Assalamu%20Alaikum%2C%20I%20would%20like%20to%20RSVP%20for%20the%20Family%20Dinner%20Gathering%20on%2018%20July%202026."
               ariaLabel="RSVP via WhatsApp"
               accent="#25D366"
               icon={<MessageCircle size={19} />}

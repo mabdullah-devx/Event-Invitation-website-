@@ -50,7 +50,7 @@ export default function VenueSection() {
             Qasr Al Hamra Restaurant
           </h2>
           <p className="font-cormorant italic text-warm-beige/70" style={{ fontSize: '20px' }}>
-            An exquisite setting for an unforgettable afternoon
+            An exquisite setting for an unforgettable night
           </p>
         </motion.div>
 

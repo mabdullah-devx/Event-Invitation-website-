@@ -48,7 +48,7 @@ export default function CourtyardHero({ started }: CourtyardHeroProps) {
 
         {/* Main Title */}
         <h1 className="font-playfair text-5xl md:text-8xl text-cream-white tracking-wide leading-tight mb-6">
-          Family Lunch
+          Family Dinner
           <br />
           <span className="font-light italic text-gold">Gathering</span>
         </h1>

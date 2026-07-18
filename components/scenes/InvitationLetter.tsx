@@ -151,7 +151,7 @@ export default function InvitationLetter({ visible, onOpenInvitation }: Invitati
                   className="font-playfair text-2xl md:text-3xl tracking-wider font-semibold"
                   style={{ color: '#2A1E00' }}
                 >
-                  Family Lunch Gathering
+                  Family Dinner Gathering
                 </motion.h2>
 
                 {/* Divider */}
@@ -165,7 +165,7 @@ export default function InvitationLetter({ visible, onOpenInvitation }: Invitati
                   className="font-cormorant text-base leading-relaxed tracking-wide max-w-sm"
                   style={{ color: '#3A2E14', fontSize: '1.05rem' }}
                 >
-                  Join us for an afternoon of togetherness, delicious food,
+                  Join us for a night of togetherness, delicious food,
                   warm conversations, and beautiful memories shared with our
                   loved ones.
                 </motion.p>
