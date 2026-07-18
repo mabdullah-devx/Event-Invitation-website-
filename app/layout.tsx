@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Cormorant_Garamond, Inter, Poppins } from "next/font/google";
 import "@/app/globals.css";
+import { Analytics } from "@vercel/analytics/next";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -55,6 +56,7 @@ export default function RootLayout({
     <html lang="en" className={`${playfair.variable} ${cormorant.variable} ${inter.variable} ${poppins.variable}`}>
       <body className="antialiased" suppressHydrationWarning>
         {children}
+        <Analytics />
       </body>
     </html>
   );
