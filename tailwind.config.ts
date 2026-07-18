@@ -18,10 +18,10 @@ const config: Config = {
         'soft-bronze': '#A77B4A',
       },
       fontFamily: {
-        playfair: ['"Playfair Display"', 'Georgia', 'serif'],
-        cormorant: ['"Cormorant Garamond"', 'Georgia', 'serif'],
-        inter: ['Inter', 'system-ui', 'sans-serif'],
-        poppins: ['Poppins', 'system-ui', 'sans-serif'],
+        playfair: ['var(--font-playfair)', 'Georgia', 'serif'],
+        cormorant: ['var(--font-cormorant)', 'Georgia', 'serif'],
+        inter: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        poppins: ['var(--font-poppins)', 'system-ui', 'sans-serif'],
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',
